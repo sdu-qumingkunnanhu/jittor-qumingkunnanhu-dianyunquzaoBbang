@@ -1,0 +1,4 @@
+__target__: pgd
+
+ckpt_save_dir: stage2/experiments
+ckpt_save_name: stage2_checkpoint

@@ -1,0 +1,22 @@
+seed: 2025
+
+stage1_ckpt: ckp/stage1_checkpoint_199.pkl
+stage2_ckpt: ckp/stage2_checkpoint_39.pkl
+init_joint_ckpt: ckp/stage3_checkpoint_hard005_tail015_bs32_joint_362.pkl
+
+start_epoch: 363
+joint_epochs: 462
+joint_batch_size: 16
+stage2_lr: 0.00005
+stage1_lr_mult: 0.1
+stage1_loss_weight: 0.1
+lambda_hard: 0.005
+hard_tail_ratio: 0.15
+grad_clip: 1.0
+log_every: 50
+
+components:
+  data: stage3/configs/data/train
+  transform: stage3/configs/transform/ops_fps_np2
+  system: stage3/configs/system/run_hard005_tail015_bs16_fps_np2_from362
+  model: stage3/configs/model/core

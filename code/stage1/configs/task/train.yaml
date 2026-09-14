@@ -1,0 +1,27 @@
+mode: train
+debug: false
+
+components:
+  data: stage1/configs/data/train
+  transform: stage1/configs/transform/ops
+  system: stage1/configs/system/run
+  model: stage1/configs/model/core
+
+loss:
+  loss: 1.0
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 500
+  validate_every: 0
+  log_every: 50
+  save_every: 1
+  scheduler:
+    __target__: plateau
+    patience: 2
+    factor: 0.5
+    min_lr: 0.000000001
+    frequency: 5

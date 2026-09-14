@@ -1,0 +1,4 @@
+__target__: pgd
+
+ckpt_save_dir: stage3/experiments_hard005_tail015_bs8_fps_np4_from461
+ckpt_save_name: stage3_checkpoint_hard005_tail015_bs8_fps_np4_from461

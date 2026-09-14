@@ -1,0 +1,32 @@
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: true
+  batch_size: 32
+  num_workers: 4
+  rebuild_each_epoch: true
+  datapath:
+    input_dataset_dir: /home/waas/jittorb/dataset/dataset_train
+    use_prob: true
+    num_files: 10000
+    loader: *loader
+    data_name: *data_name
+    ignore_check: true
+    data_path:
+      shapenet:
+        - [stage1/datalist/train.txt, 1.0]
+
+validate_dataset:
+  shuffle: false
+  batch_size: 32
+  num_workers: 4
+  datapath:
+    input_dataset_dir: /home/waas/jittorb/dataset/dataset_train
+    use_prob: false
+    loader: *loader
+    data_name: *data_name
+    ignore_check: true
+    data_path:
+      shapenet:
+        - [stage1/datalist/validate.txt, 1.0]

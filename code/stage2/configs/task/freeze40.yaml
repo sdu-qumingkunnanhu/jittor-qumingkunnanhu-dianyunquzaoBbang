@@ -1,0 +1,15 @@
+stage1_ckpt: ckp/stage1_checkpoint_199.pkl
+
+seed: 2025
+epochs: 40
+lr: 0.00005
+lambda_hard: 0.002
+hard_tail_ratio: 0.1
+grad_clip: 1.0
+log_every: 50
+
+components:
+  data: stage2/configs/data/train
+  transform: stage2/configs/transform/ops
+  system: stage2/configs/system/run
+  model: stage2/configs/model/core
